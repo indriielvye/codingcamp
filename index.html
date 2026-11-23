@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Greeting / Header -->
+    <header class="header">
+        <div class="greeting-container">
+            <h1 id="greeting">Hello!</h1>
+            <p id="current-time" class="current-time">--:--</p>
+            <p id="current-date" class="current-date">Loading...</p>
+            <!-- Name control for personalized greeting -->
+            <div class="name-control">
+                <input type="text" id="name-input" class="name-input"
+                       placeholder="Enter your name" maxlength="50" autocomplete="off"
+                       aria-label="Your name for the greeting">
+                <button id="name-save" class="btn btn-primary" type="button">Save</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+        <!-- Focus Timer -->
+        <section class="card timer-card" aria-label="Focus Timer">
+            <h2 class="card-title">Focus Timer</h2>
+            <div id="timer-display" class="timer-display">25:00</div>
+            <div class="timer-controls">
+                <button id="timer-start" class="btn btn-primary">Start</button>
+                <button id="timer-stop" class="btn" disabled>Stop</button>
+                <button id="timer-reset" class="btn">Reset</button>
+            </div>
+        </section>
+
+        <!-- To-Do List -->
+        <section class="card todo-card" aria-label="To-Do List">
+            <h2 class="card-title">To-Do List</h2>
+            <form id="todo-form" class="todo-form">
+                <input type="text" id="todo-input" class="todo-input" placeholder="Add a new task..." maxlength="200" autocomplete="off">
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+            <ul id="todo-list" class="todo-list"></ul>
+            <p id="todo-empty" class="todo-empty">No tasks yet. Add one above!</p>
+        </section>
+
+        <!-- Quick Links -->
+        <section class="card links-card" aria-label="Quick Links">
+            <h2 class="card-title">Quick Links</h2>
+            <form id="link-form" class="link-form">
+                <input type="text" id="link-name" class="link-input" placeholder="Name (e.g. GitHub)" maxlength="50" autocomplete="off">
+                <input type="url" id="link-url" class="link-input" placeholder="https://..." autocomplete="off">
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+            <div id="links-list" class="links-list"></div>
+            <p id="links-empty" class="links-empty">No links saved. Add one above!</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Made with care at Coding Camp</p>
+    </footer>
+
+    <!-- Toast container for non-blocking notifications -->
+    <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
